@@ -1,5 +1,3 @@
-import JSON5 from "json5";
-
 function formatJSON() {
   const input = document.getElementById("jsonInput").value;
   const output = document.getElementById("jsonOutput");
