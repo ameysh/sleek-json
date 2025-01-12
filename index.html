@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleek JSON Formatter</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+  </head>
+  <body class="dark">
+    <div class="container">
+      <h1>Sleek JSON Formatter</h1>
+      <div class="options">
+        <button onclick="toggleTheme()">Toggle Theme</button>
+        <select id="tabSpaceSelect">
+          <option value="1">1 Space</option>
+          <option value="2" selected>2 Spaces</option>
+          <option value="3">3 Spaces</option>
+          <option value="4">4 Spaces</option>
+          <option value="5">5 Spaces</option>
+          <option value="6">6 Spaces</option>
+          <option value="7">7 Spaces</option>
+          <option value="8">8 Spaces</option>
+          <option value="9">9 Spaces</option>
+          <option value="10">10 Spaces</option>
+          <option value="11">11 Spaces</option>
+          <option value="12">12 Spaces</option>
+          <option value="13">13 Spaces</option>
+          <option value="14">14 Spaces</option>
+          <option value="15">15 Spaces</option>
+          <option value="16">16 Spaces</option>
+        </select>
+        <select id="specificationSelect">
+          <option value="">Specification</option>
+          <option value="spec1">Specification 1</option>
+          <option value="spec2">Specification 2</option>
+        </select>
+      </div>
+      <textarea id="jsonInput" placeholder="Paste your JSON here"></textarea>
+      <div class="buttons">
+        <button onclick="formatJSON()">Format</button>
+        <button onclick="minifyJSON()">Minify</button>
+        <button onclick="clearInput()">Clear</button>
+        <button onclick="toggleTheme()">Toggle Theme</button>
+      </div>
+      <textarea
+        id="jsonOutput"
+        placeholder="Formatted JSON will appear here"
+        readonly
+      ></textarea>
+      <p id="error" class="error"></p>
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>

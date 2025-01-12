@@ -1,0 +1,134 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body.dark {
+  background-color: #333;
+  color: #f4f4f9;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .container {
+  background: #444;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(to top right, #ffa500, #fbc054);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark h1 {
+  background: linear-gradient(to top right, #ffa500, #fbc054);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+textarea {
+  width: 100%;
+  max-width: 750px;
+  height: 150px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: monospace;
+  background: #e9f7fe;
+  color: #333;
+  resize: vertical;
+}
+
+body.dark textarea {
+  background: #555;
+  color: #f4f4f9;
+  border: 1px solid #666;
+}
+
+textarea:focus {
+  outline: 2px solid #007bff;
+}
+
+body.dark textarea:focus {
+  outline: 2px solid #66b2ff;
+}
+
+.buttons {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(to top right, #ffa500, #fbc054);
+  color: white;
+  cursor: pointer;
+}
+
+body.dark button {
+  background: linear-gradient(to top right, #cc8400, #d99a3a);
+}
+
+button:hover {
+  background: linear-gradient(to top right, #ff8c00, #fba034);
+}
+
+body.dark button:hover {
+  background: linear-gradient(to top right, #b36b00, #c4882a);
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
+}
+
+body.dark .error {
+  color: #ff6666;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+body.dark select {
+  background: #555;
+  color: #f4f4f9;
+  border: 1px solid #666;
+}
