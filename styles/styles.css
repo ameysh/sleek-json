@@ -23,6 +23,7 @@ body.dark {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 body.dark .container {
@@ -101,8 +102,11 @@ body.dark button:hover {
 }
 
 #themeToggle {
-  background: #fff;
+  background: #f4f4f9;
   color: #333;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 body.dark #themeToggle {
