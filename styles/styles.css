@@ -110,6 +110,34 @@ body.dark button:hover {
   background: linear-gradient(to top right, #b36b00, #c4882a);
 }
 
+button#exampleButton,
+button#clearButton {
+  background: none;
+  border: 2px solid #ffa500;
+  color: #ffa500;
+}
+
+body.dark button#exampleButton,
+body.dark button#clearButton {
+  background: none;
+  border: 2px solid #ffa500;
+  color: #ffa500;
+}
+
+button#exampleButton:hover,
+button#clearButton:hover {
+  background: none;
+  border: 2px solid #ff8c00;
+  color: #ff8c00;
+}
+
+body.dark button#exampleButton:hover,
+body.dark button#clearButton:hover {
+  background: none;
+  border: 2px solid #ff8c00;
+  color: #ff8c00;
+}
+
 #themeToggle {
   padding: 10px;
   border: 1px solid #ddd;
