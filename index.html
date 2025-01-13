@@ -7,55 +7,73 @@
     <link rel="stylesheet" href="/styles/styles.css" />
   </head>
   <body class="dark">
-    <div class="container">
-      <button id="themeToggle" onclick="toggleTheme()">🌙</button>
-      <h1>Sleek JSON Formatter</h1>
-      <div class="options">
-        <div>
-          <label for="tabSpaceSelect">Tab Spaces:</label>
-          <select id="tabSpaceSelect">
-            <option value="1">1</option>
-            <option value="2" selected>2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-          </select>
+    <div class="main-container">
+      <div class="container">
+        <h1>Sleek JSON Formatter</h1>
+        <p id="error" class="error"></p>
+        <div class="input-container">
+          <label for="jsonInput" class="input-label">Input JSON:</label>
+          <button id="uploadButton">Upload JSON File</button>
         </div>
-        <div>
-          <label for="specificationSelect">Input Specification:</label>
-          <select id="specificationSelect">
-            <option value="RFC8259">RFC 8259</option>
-            <option value="JSON5">JSON5</option>
-          </select>
-          <button id="uploadButton">Upload</button>
+        <textarea id="jsonInput" placeholder="Paste your JSON here"></textarea>
+        <div class="buttons">
+          <button onclick="formatJSON()">Format</button>
+          <button onclick="minifyJSON()">Minify</button>
+          <button onclick="clearInput()">Clear</button>
+        </div>
+        <label for="jsonOutput" class="output-label">Output JSON:</label>
+        <textarea
+          id="jsonOutput"
+          placeholder="Formatted JSON will appear here"
+          readonly
+        ></textarea>
+        <div class="buttons">
+          <button id="copyButton">Copy</button>
+          <button id="downloadButton">Download</button>
         </div>
       </div>
-      <p id="error" class="error"></p>
-      <textarea id="jsonInput" placeholder="Paste your JSON here"></textarea>
-      <div class="buttons">
-        <button onclick="formatJSON()">Format</button>
-        <button onclick="minifyJSON()">Minify</button>
-        <button onclick="clearInput()">Clear</button>
-      </div>
-      <textarea
-        id="jsonOutput"
-        placeholder="Formatted JSON will appear here"
-        readonly
-      ></textarea>
-      <div class="buttons">
-        <button id="copyButton">Copy</button>
-        <button id="downloadButton">Download</button>
+      <div class="secondary-container">
+        <div class="section">
+          <div class="section-title">Input Settings</div>
+          <div class="option-group">
+            <label for="specificationSelect">Specification:</label>
+            <select id="specificationSelect">
+              <option value="RFC8259">RFC 8259</option>
+              <option value="JSON5">JSON5</option>
+            </select>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-title">Output Settings</div>
+          <div class="option-group">
+            <label for="tabSpaceSelect">Tab Spaces:</label>
+            <select id="tabSpaceSelect">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+            </select>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-title">General Settings</div>
+          <div class="option-group">
+            <label for="themeToggle">Theme:</label>
+            <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+          </div>
+        </div>
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/json5/2.2.1/index.min.js"></script>

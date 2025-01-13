@@ -111,16 +111,25 @@ body.dark button:hover {
 }
 
 #themeToggle {
-  background: #f4f4f9;
-  color: #333;
-  position: absolute;
-  top: 15px;
-  right: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(to top right, #ffa500, #fbc054);
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 body.dark #themeToggle {
-  background: #555;
-  color: #f4f4f9;
+  background: linear-gradient(to top right, #cc8400, #d99a3a);
+}
+
+#themeToggle:hover {
+  background: linear-gradient(to top right, #ff8c00, #fba034);
+}
+
+body.dark #themeToggle:hover {
+  background: linear-gradient(to top right, #b36b00, #c4882a);
 }
 
 .error {
@@ -244,6 +253,34 @@ body.dark #uploadButton:hover {
   background: linear-gradient(to top right, #b36b00, #c4882a);
 }
 
+.input-label,
+.output-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  text-align: left;
+  margin-left: 20px;
+  color: #333;
+}
+
+body.dark .input-label,
+body.dark .output-label {
+  color: #f4f4f9;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 40px);
+  max-width: 100%;
+  margin: 0 auto 15px auto;
+}
+
+.input-container .input-label {
+  margin-left: 0;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -273,4 +310,91 @@ body.dark ::-webkit-scrollbar-thumb {
 
 body.dark ::-webkit-scrollbar-thumb:hover {
   background-color: #b36b00;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.secondary-container {
+  width: 300px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+body.dark .secondary-container {
+  background: #444;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.secondary-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+body.dark .secondary-container h2 {
+  color: #f4f4f9;
+}
+
+.secondary-container .options {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-group label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+body.dark .option-group label {
+  color: #f4f4f9;
+}
+
+.option-group select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+body.dark .option-group select {
+  background: #555;
+  color: #f4f4f9;
+  border: 1px solid #666;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+body.dark .section-title {
+  color: #f4f4f9;
+}
+
+.section {
+  margin-bottom: 20px;
 }
