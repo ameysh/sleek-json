@@ -57,6 +57,15 @@ textarea {
   background: #e9f7fe;
   color: #333;
   resize: vertical;
+  overflow: auto;
+}
+
+textarea::-webkit-resizer {
+  background: linear-gradient(to bottom right, #ffa500 50%, transparent 50%);
+}
+
+body.dark textarea::-webkit-resizer {
+  background: linear-gradient(to bottom right, #cc8400 50%, transparent 50%);
 }
 
 body.dark textarea {
