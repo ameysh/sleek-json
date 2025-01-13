@@ -37,6 +37,14 @@ function parseJSONInput(input, specification) {
   }
 }
 
+function stringifyJSON(json, specification, tabSpaces = null) {
+  if (specification === "JSON5") {
+    return JSON5.stringify(json, null, tabSpaces);
+  } else {
+    return JSON.stringify(json, null, tabSpaces);
+  }
+}
+
 function formatJSON() {
   const input = jsonInput.value;
   const tabSpaces = parseInt(tabSpaceSelect.value, 10);
@@ -44,7 +52,7 @@ function formatJSON() {
 
   try {
     const json = parseJSONInput(input, specification);
-    jsonOutput.value = JSON.stringify(json, null, tabSpaces);
+    jsonOutput.value = stringifyJSON(json, specification, tabSpaces);
     error.style.display = "none";
   } catch (e) {
     error.textContent = e.message;
@@ -59,7 +67,7 @@ function minifyJSON() {
 
   try {
     const json = parseJSONInput(input, specification);
-    jsonOutput.value = JSON.stringify(json);
+    jsonOutput.value = stringifyJSON(json, specification);
     error.style.display = "none";
   } catch (e) {
     error.textContent = e.message;
