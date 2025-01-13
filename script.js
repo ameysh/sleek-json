@@ -6,7 +6,6 @@ const specificationSelect = document.getElementById("specificationSelect");
 const themeToggle = document.getElementById("themeToggle");
 const copyButton = document.getElementById("copyButton");
 const downloadButton = document.getElementById("downloadButton");
-
 const uploadButton = document.getElementById("uploadButton");
 const fileInput = document.createElement("input");
 fileInput.type = "file";

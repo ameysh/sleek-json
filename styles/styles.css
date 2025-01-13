@@ -197,7 +197,6 @@ label {
   background: linear-gradient(to top right, #ffa500, #fbc054);
   color: white;
   cursor: pointer;
-  margin-left: 10px;
 }
 
 body.dark #copyButton {
@@ -219,7 +218,6 @@ body.dark #copyButton:hover {
   background: linear-gradient(to top right, #ffa500, #fbc054);
   color: white;
   cursor: pointer;
-  margin-left: 10px;
 }
 
 body.dark #downloadButton {
