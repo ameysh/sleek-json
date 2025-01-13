@@ -26,6 +26,35 @@ fileInput.addEventListener("change", (event) => {
   }
 });
 
+const exampleButton = document.getElementById("exampleButton");
+
+exampleButton.addEventListener("click", () => {
+  const specification = specificationSelect.value;
+  if (specification === "JSON5") {
+    jsonInput.value = `{
+  name: "Bob",
+  age: 25,
+  isEmployed: false,
+  skills: ["HTML", "CSS", "React"],
+  address: {
+    city: "Somewhere",
+    zipcode: "67890"
+  }
+}`;
+  } else {
+    jsonInput.value = `{
+  "name": "Alice",
+  "age": 30,
+  "isEmployed": true,
+  "skills": ["JavaScript", "Python", "C++"],
+  "address": {
+    "city": "Wonderland",
+    "zipcode": "12345"
+  }
+}`;
+  }
+});
+
 function parseJSONInput(input, specification) {
   try {
     return specification === "JSON5" ? JSON5.parse(input) : JSON.parse(input);
