@@ -74,6 +74,10 @@ body.dark textarea {
   border: 1px solid #666;
 }
 
+body.dark textarea::placeholder {
+  color: #bbb;
+}
+
 textarea:focus {
   outline: 2px solid #007bff;
 }
