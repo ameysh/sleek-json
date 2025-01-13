@@ -7,6 +7,26 @@ const themeToggle = document.getElementById("themeToggle");
 const copyButton = document.getElementById("copyButton");
 const downloadButton = document.getElementById("downloadButton");
 
+const uploadButton = document.getElementById("uploadButton");
+const fileInput = document.createElement("input");
+fileInput.type = "file";
+fileInput.accept = ".json";
+
+uploadButton.addEventListener("click", () => {
+  fileInput.click();
+});
+
+fileInput.addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      jsonInput.value = e.target.result;
+    };
+    reader.readAsText(file);
+  }
+});
+
 function parseJSONInput(input, specification) {
   try {
     return specification === "JSON5" ? JSON5.parse(input) : JSON.parse(input);
