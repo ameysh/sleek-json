@@ -111,25 +111,28 @@ body.dark button:hover {
 }
 
 #themeToggle {
-  padding: 10px 15px;
-  border: none;
+  padding: 10px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  background: linear-gradient(to top right, #ffa500, #fbc054);
-  color: white;
+  background: #fff;
+  color: #333;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 body.dark #themeToggle {
-  background: linear-gradient(to top right, #cc8400, #d99a3a);
+  background: #555;
+  color: #f4f4f9;
+  border: 1px solid #666;
 }
 
 #themeToggle:hover {
-  background: linear-gradient(to top right, #ff8c00, #fba034);
+  background: #f4f4f9;
+  color: #333;
 }
 
 body.dark #themeToggle:hover {
-  background: linear-gradient(to top right, #b36b00, #c4882a);
+  background: #666;
+  color: #f4f4f9;
 }
 
 .error {

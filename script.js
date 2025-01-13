@@ -78,8 +78,8 @@ function clearInput() {
 function toggleTheme() {
   document.body.classList.toggle("dark");
   themeToggle.textContent = document.body.classList.contains("dark")
-    ? "🌙"
-    : "☀️";
+    ? "Dark"
+    : "Light";
 }
 
 copyButton.addEventListener("click", () => {
