@@ -11,28 +11,34 @@
       <button id="themeToggle" onclick="toggleTheme()">🌙</button>
       <h1>Sleek JSON Formatter</h1>
       <div class="options">
-        <select id="tabSpaceSelect">
-          <option value="1">1 Space</option>
-          <option value="2" selected>2 Spaces</option>
-          <option value="3">3 Spaces</option>
-          <option value="4">4 Spaces</option>
-          <option value="5">5 Spaces</option>
-          <option value="6">6 Spaces</option>
-          <option value="7">7 Spaces</option>
-          <option value="8">8 Spaces</option>
-          <option value="9">9 Spaces</option>
-          <option value="10">10 Spaces</option>
-          <option value="11">11 Spaces</option>
-          <option value="12">12 Spaces</option>
-          <option value="13">13 Spaces</option>
-          <option value="14">14 Spaces</option>
-          <option value="15">15 Spaces</option>
-          <option value="16">16 Spaces</option>
-        </select>
-        <select id="specificationSelect">
-          <option value="RFC8259">RFC 8259</option>
-          <option value="JSON5">JSON5</option>
-        </select>
+        <div>
+          <label for="tabSpaceSelect">Tab Spaces:</label>
+          <select id="tabSpaceSelect">
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+          </select>
+        </div>
+        <div>
+          <label for="specificationSelect">Input Specification:</label>
+          <select id="specificationSelect">
+            <option value="RFC8259">RFC 8259</option>
+            <option value="JSON5">JSON5</option>
+          </select>
+        </div>
       </div>
       <textarea id="jsonInput" placeholder="Paste your JSON here"></textarea>
       <div class="buttons">

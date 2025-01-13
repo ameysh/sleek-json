@@ -128,8 +128,14 @@ body.dark .error {
 .options {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 40px;
   margin-bottom: 20px;
+}
+
+.options > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 select {
@@ -145,4 +151,11 @@ body.dark select {
   background: #555;
   color: #f4f4f9;
   border: 1px solid #666;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
 }
