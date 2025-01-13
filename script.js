@@ -5,6 +5,7 @@ const tabSpaceSelect = document.getElementById("tabSpaceSelect");
 const specificationSelect = document.getElementById("specificationSelect");
 const themeToggle = document.getElementById("themeToggle");
 const copyButton = document.getElementById("copyButton");
+const downloadButton = document.getElementById("downloadButton");
 
 function parseJSONInput(input, specification) {
   try {
@@ -68,4 +69,16 @@ copyButton.addEventListener("click", () => {
   setTimeout(() => {
     copyButton.textContent = "Copy";
   }, 2000);
+});
+
+downloadButton.addEventListener("click", () => {
+  const blob = new Blob([jsonOutput.value], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "formatted.json";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 });

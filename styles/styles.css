@@ -190,3 +190,25 @@ body.dark #copyButton {
 body.dark #copyButton:hover {
   background: linear-gradient(to top right, #b36b00, #c4882a);
 }
+
+#downloadButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(to top right, #ffa500, #fbc054);
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+body.dark #downloadButton {
+  background: linear-gradient(to top right, #cc8400, #d99a3a);
+}
+
+#downloadButton:hover {
+  background: linear-gradient(to top right, #ff8c00, #fba034);
+}
+
+body.dark #downloadButton:hover {
+  background: linear-gradient(to top right, #b36b00, #c4882a);
+}
