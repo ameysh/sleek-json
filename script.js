@@ -4,6 +4,7 @@ const error = document.getElementById("error");
 const tabSpaceSelect = document.getElementById("tabSpaceSelect");
 const specificationSelect = document.getElementById("specificationSelect");
 const themeToggle = document.getElementById("themeToggle");
+const copyButton = document.getElementById("copyButton");
 
 function parseJSONInput(input, specification) {
   try {
@@ -59,3 +60,12 @@ function toggleTheme() {
     ? "🌙"
     : "☀️";
 }
+
+copyButton.addEventListener("click", () => {
+  jsonOutput.select();
+  document.execCommand("copy");
+  copyButton.textContent = "Copied!";
+  setTimeout(() => {
+    copyButton.textContent = "Copy";
+  }, 2000);
+});
