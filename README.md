@@ -8,17 +8,17 @@ Working with JSON data can often be cumbersome, especially when dealing with lar
 - **Minify JSON**: Compress your JSON data to a single line.
 - **Specification Support**: Choose between RFC 8259 and JSON5 specifications.
 
-## Usage
-
-To use the Sleek JSON Formatter, simply add your JSON data into the provided text area. You can then choose the number of spaces for indentation and select the desired JSON specification. Then choose "Format" to beautify your JSON data or "Minify" to compress it into a single line.
-
 ## Installation
 
 Sleek JSON Formatter is a fully web-based tool. You can access it directly through your web browser using the link. No installation is required.
 
-## Dependencies
+Dependencies
 
 [JSON5](https://cdnjs.cloudflare.com/ajax/libs/json5/2.2.1/index.min.js)
+
+## Usage
+
+To use the Sleek JSON Formatter, simply add your JSON data into the provided text area. You can then choose the number of spaces for indentation and select the desired JSON specification. Then choose "Format" to beautify your JSON data or "Minify" to compress it into a single line.
 
 ## License
 
