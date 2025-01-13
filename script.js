@@ -28,9 +28,15 @@ function minifyJSON() {
   const input = document.getElementById("jsonInput").value;
   const output = document.getElementById("jsonOutput");
   const error = document.getElementById("error");
+  const specification = document.getElementById("specificationSelect").value;
 
   try {
-    const json = JSON.parse(input);
+    let json;
+    if (specification === "JSON5") {
+      json = JSON5.parse(input);
+    } else {
+      json = JSON.parse(input);
+    }
     output.value = JSON.stringify(json);
     error.style.display = "none";
   } catch (e) {
