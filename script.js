@@ -9,7 +9,10 @@ function parseJSONInput(input, specification) {
   try {
     return specification === "JSON5" ? JSON5.parse(input) : JSON.parse(input);
   } catch (e) {
-    throw new Error("Invalid JSON: " + e.message);
+    throw new Error(
+      "Oops! It looks like your JSON is invalid. Please check the syntax and try again. Here are more details for your reference: " +
+        e.message
+    );
   }
 }
 

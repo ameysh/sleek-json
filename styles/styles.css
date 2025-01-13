@@ -115,14 +115,23 @@ body.dark #themeToggle {
 }
 
 .error {
-  color: red;
+  color: #d9534f;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  padding: 10px;
+  border-radius: 5px;
   font-size: 14px;
   margin-top: 10px;
   display: none;
+  width: calc(100% - 40px);
+  max-width: 100%;
+  margin: 15px auto;
 }
 
 body.dark .error {
-  color: #ff6666;
+  color: #f4f4f9;
+  background-color: #d9534f;
+  border: 1px solid #a94442;
 }
 
 .options {
