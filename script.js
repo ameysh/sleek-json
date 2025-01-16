@@ -1,37 +1,39 @@
-const jsonInput = document.getElementById("jsonInput");
-const jsonOutput = document.getElementById("jsonOutput");
-const error = document.getElementById("error");
-const tabSpaceSelect = document.getElementById("tabSpaceSelect");
-const specificationSelect = document.getElementById("specificationSelect");
-const themeToggle = document.getElementById("themeToggle");
-const copyButton = document.getElementById("copyButton");
-const downloadButton = document.getElementById("downloadButton");
-const uploadButton = document.getElementById("uploadButton");
-const fileInput = document.createElement("input");
-fileInput.type = "file";
-fileInput.accept = ".json";
+document.addEventListener("DOMContentLoaded", () => {
+  const jsonInput = document.getElementById("jsonInput");
+  const jsonOutput = document.getElementById("jsonOutput");
+  const error = document.getElementById("error");
+  const tabSpaceSelect = document.getElementById("tabSpaceSelect");
+  const specificationSelect = document.getElementById("specificationSelect");
+  const themeToggle = document.getElementById("themeToggle");
+  const copyButton = document.getElementById("copyButton");
+  const downloadButton = document.getElementById("downloadButton");
+  const uploadButton = document.getElementById("uploadButton");
+  const fileInput = document.createElement("input");
+  fileInput.type = "file";
+  fileInput.accept = ".json";
 
-uploadButton.addEventListener("click", () => {
-  fileInput.click();
-});
+  document
+    .getElementById("exampleButton")
+    .addEventListener("click", loadExampleJSON);
+  document.getElementById("clearButton").addEventListener("click", clearInput);
+  document
+    .querySelector(".buttons button:nth-child(1)")
+    .addEventListener("click", formatJSON);
+  document
+    .querySelector(".buttons button:nth-child(2)")
+    .addEventListener("click", minifyJSON);
+  themeToggle.addEventListener("click", toggleTheme);
+  copyButton.addEventListener("click", copyToClipboard);
+  downloadButton.addEventListener("click", downloadFormattedJSON);
 
-fileInput.addEventListener("change", (event) => {
-  const file = event.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      jsonInput.value = e.target.result;
-    };
-    reader.readAsText(file);
-  }
-});
+  uploadButton.addEventListener("click", () => fileInput.click());
+  fileInput.addEventListener("change", handleFileUpload);
 
-const exampleButton = document.getElementById("exampleButton");
-
-exampleButton.addEventListener("click", () => {
-  const specification = specificationSelect.value;
-  if (specification === "JSON5") {
-    jsonInput.value = `{
+  function loadExampleJSON() {
+    const specification = specificationSelect.value;
+    jsonInput.value =
+      specification === "JSON5"
+        ? `{
   name: "Bob",
   age: 25,
   isEmployed: false,
@@ -40,9 +42,8 @@ exampleButton.addEventListener("click", () => {
     city: "Somewhere",
     zipcode: "67890"
   }
-}`;
-  } else {
-    jsonInput.value = `{
+}`
+        : `{
   "name": "Alice",
   "age": 30,
   "isEmployed": true,
@@ -53,88 +54,102 @@ exampleButton.addEventListener("click", () => {
   }
 }`;
   }
-});
 
-function parseJSONInput(input, specification) {
-  try {
-    return specification === "JSON5" ? JSON5.parse(input) : JSON.parse(input);
-  } catch (e) {
-    throw new Error(
-      "Oops! It looks like your JSON is invalid. Please check the syntax and input specification then try again. Here are more details for your reference: " +
-        e.message
-    );
+  function parseJSONInput(input, specification) {
+    try {
+      return specification === "JSON5" ? JSON5.parse(input) : JSON.parse(input);
+    } catch (e) {
+      throw new Error(
+        escapeHTML(
+          `Oops! Something went wrong. Please check your JSON and the selected specification and try again. Here are more details about this error: ${e.message}`
+        )
+      );
+    }
   }
-}
 
-function stringifyJSON(json, specification, tabSpaces = null) {
-  if (specification === "JSON5") {
-    return JSON5.stringify(json, null, tabSpaces);
-  } else {
-    return JSON.stringify(json, null, tabSpaces);
+  function stringifyJSON(json, specification, tabSpaces = null) {
+    return specification === "JSON5"
+      ? JSON5.stringify(json, null, tabSpaces)
+      : JSON.stringify(json, null, tabSpaces);
   }
-}
 
-function formatJSON() {
-  const input = jsonInput.value;
-  const tabSpaces = parseInt(tabSpaceSelect.value, 10);
-  const specification = specificationSelect.value;
+  function formatJSON() {
+    const input = jsonInput.value;
+    const tabSpaces = parseInt(tabSpaceSelect.value, 10);
+    const specification = specificationSelect.value;
 
-  try {
-    const json = parseJSONInput(input, specification);
-    jsonOutput.value = stringifyJSON(json, specification, tabSpaces);
-    error.style.display = "none";
-  } catch (e) {
-    error.textContent = e.message;
+    try {
+      const json = parseJSONInput(input, specification);
+      jsonOutput.value = stringifyJSON(json, specification, tabSpaces);
+      error.style.display = "none";
+    } catch (e) {
+      displayError(e.message);
+    }
+  }
+
+  function minifyJSON() {
+    const input = jsonInput.value;
+    const specification = specificationSelect.value;
+
+    try {
+      const json = parseJSONInput(input, specification);
+      jsonOutput.value = stringifyJSON(json, specification);
+      error.style.display = "none";
+    } catch (e) {
+      displayError(e.message);
+    }
+  }
+
+  function displayError(message) {
+    error.textContent = message;
     error.style.display = "block";
     jsonOutput.value = "";
   }
-}
 
-function minifyJSON() {
-  const input = jsonInput.value;
-  const specification = specificationSelect.value;
-
-  try {
-    const json = parseJSONInput(input, specification);
-    jsonOutput.value = stringifyJSON(json, specification);
-    error.style.display = "none";
-  } catch (e) {
-    error.textContent = e.message;
-    error.style.display = "block";
+  function clearInput() {
+    jsonInput.value = "";
     jsonOutput.value = "";
+    error.style.display = "none";
   }
-}
 
-function clearInput() {
-  jsonInput.value = "";
-  jsonOutput.value = "";
-  error.style.display = "none";
-}
+  function copyToClipboard() {
+    navigator.clipboard.writeText(jsonOutput.value).then(() => {
+      copyButton.textContent = "Copied!";
+      setTimeout(() => (copyButton.textContent = "Copy"), 2000);
+    });
+  }
 
-function toggleTheme() {
-  document.body.classList.toggle("dark");
-  themeToggle.textContent = document.body.classList.contains("dark")
-    ? "Dark"
-    : "Light";
-}
+  function downloadFormattedJSON() {
+    const blob = new Blob([jsonOutput.value], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "formatted.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
 
-copyButton.addEventListener("click", () => {
-  jsonOutput.select();
-  document.execCommand("copy");
-  copyButton.textContent = "Copied!";
-  setTimeout(() => {
-    copyButton.textContent = "Copy";
-  }, 2000);
-});
+  function handleFileUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => (jsonInput.value = e.target.result);
+      reader.readAsText(file);
+    }
+  }
 
-downloadButton.addEventListener("click", () => {
-  const blob = new Blob([jsonOutput.value], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "formatted.json";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+  function toggleTheme() {
+    document.body.classList.toggle("dark");
+    themeToggle.textContent = document.body.classList.contains("dark")
+      ? "Dark"
+      : "Light";
+  }
+
+  function escapeHTML(str) {
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
 });

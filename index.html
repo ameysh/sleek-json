@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sleek JSON Formatter</title>
     <link rel="stylesheet" href="/styles/styles.css" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self';"
+    />
   </head>
   <body class="dark">
     <div class="main-container">
       <div class="container">
         <h1>Sleek JSON Formatter</h1>
-        <p id="error" class="error"></p>
+        <p id="error" class="error" style="display: none"></p>
         <div class="input-container">
           <label for="jsonInput" class="input-label">Input JSON:</label>
           <div class="button-group">
@@ -20,9 +24,9 @@
         </div>
         <textarea id="jsonInput" placeholder="Paste your JSON here"></textarea>
         <div class="buttons">
-          <button onclick="formatJSON()">Format</button>
-          <button onclick="minifyJSON()">Minify</button>
-          <button id="clearButton" onclick="clearInput()">Clear</button>
+          <button id="formatButton">Format</button>
+          <button id="minifyButton">Minify</button>
+          <button id="clearButton">Clear</button>
         </div>
         <label for="jsonOutput" class="output-label">Output JSON:</label>
         <textarea
@@ -74,7 +78,7 @@
           <div class="section-title">General Settings</div>
           <div class="option-group">
             <label for="themeToggle">Appearance:</label>
-            <button id="themeToggle" onclick="toggleTheme()">Dark</button>
+            <button id="themeToggle">Dark</button>
           </div>
         </div>
       </div>
