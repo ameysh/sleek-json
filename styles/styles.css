@@ -1,6 +1,6 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f2f5;
   color: #333;
   margin: 0;
   padding: 0;
@@ -8,11 +8,12 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark {
-  background-color: #333;
-  color: #f4f4f9;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
 }
 
 .container {
@@ -21,26 +22,27 @@ body.dark {
   text-align: center;
   padding: 20px;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: relative;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 body.dark .container {
-  background: #444;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: #2c2c2c;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  background: linear-gradient(to top right, #ffa500, #fbc054);
+  background: linear-gradient(to top right, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 body.dark h1 {
-  background: linear-gradient(to top right, #ffa500, #fbc054);
+  background: linear-gradient(to top right, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -52,26 +54,27 @@ textarea {
   margin: 15px auto;
   padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 12px;
   font-family: monospace;
-  background: #e9f7fe;
+  background: #f9f9f9;
   color: #333;
   resize: vertical;
   overflow: auto;
+  transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 textarea::-webkit-resizer {
-  background: linear-gradient(to bottom right, #ffa500 50%, transparent 50%);
+  background: linear-gradient(to bottom right, #ff7e5f 50%, transparent 50%);
 }
 
 body.dark textarea::-webkit-resizer {
-  background: linear-gradient(to bottom right, #cc8400 50%, transparent 50%);
+  background: linear-gradient(to bottom right, #cc6e4e 50%, transparent 50%);
 }
 
 body.dark textarea {
-  background: #555;
-  color: #f4f4f9;
-  border: 1px solid #666;
+  background: #3a3a3a;
+  color: #e0e0e0;
+  border: 1px solid #555;
 }
 
 body.dark textarea::placeholder {
@@ -96,75 +99,78 @@ body.dark textarea:focus {
 button {
   padding: 10px 15px;
   border: none;
-  border-radius: 5px;
-  background: linear-gradient(to top right, #ffa500, #fbc054);
+  border-radius: 12px;
+  background: linear-gradient(to top right, #ff7e5f, #feb47b);
   color: white;
   cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
 }
 
 body.dark button {
-  background: linear-gradient(to top right, #cc8400, #d99a3a);
+  background: linear-gradient(to top right, #cc6e4e, #d99a3a);
 }
 
 button:hover {
-  background: linear-gradient(to top right, #ff8c00, #fba034);
+  background: linear-gradient(to top right, #ff6a3d, #fe9a6b);
+  transform: translateY(-2px);
 }
 
 body.dark button:hover {
-  background: linear-gradient(to top right, #b36b00, #c4882a);
+  background: linear-gradient(to top right, #b35a2d, #c4882a);
 }
 
 button#exampleButton,
 button#clearButton {
   background: none;
-  border: 2px solid #ffa500;
-  color: #ffa500;
+  border: 2px solid #ff7e5f;
+  color: #ff7e5f;
 }
 
 body.dark button#exampleButton,
 body.dark button#clearButton {
   background: none;
-  border: 2px solid #ffa500;
-  color: #ffa500;
+  border: 2px solid #cc6e4e;
+  color: #cc6e4e;
 }
 
 button#exampleButton:hover,
 button#clearButton:hover {
   background: none;
-  border: 2px solid #ff8c00;
-  color: #ff8c00;
+  border: 2px solid #ff6a3d;
+  color: #ff6a3d;
 }
 
 body.dark button#exampleButton:hover,
 body.dark button#clearButton:hover {
   background: none;
-  border: 2px solid #ff8c00;
-  color: #ff8c00;
+  border: 2px solid #b35a2d;
+  color: #b35a2d;
 }
 
 #themeToggle {
   padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 12px;
   background: #fff;
   color: #333;
   cursor: pointer;
+  transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 body.dark #themeToggle {
-  background: #555;
-  color: #f4f4f9;
-  border: 1px solid #666;
+  background: #3a3a3a;
+  color: #e0e0e0;
+  border: 1px solid #555;
 }
 
 #themeToggle:hover {
-  background: #f4f4f9;
+  background: #f0f2f5;
   color: #333;
 }
 
 body.dark #themeToggle:hover {
-  background: #666;
-  color: #f4f4f9;
+  background: #555;
+  color: #e0e0e0;
 }
 
 .error {
@@ -172,17 +178,18 @@ body.dark #themeToggle:hover {
   background-color: #f2dede;
   border: 1px solid #ebccd1;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 12px;
   font-size: 14px;
   margin-top: 10px;
   display: none;
   width: calc(100% - 40px);
   max-width: 100%;
   margin: 15px auto;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
 body.dark .error {
-  color: #f4f4f9;
+  color: #e0e0e0;
   background-color: #d9534f;
   border: 1px solid #a94442;
 }
@@ -203,16 +210,17 @@ body.dark .error {
 select {
   padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 12px;
   background: #fff;
   color: #333;
   cursor: pointer;
+  transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 body.dark select {
-  background: #555;
-  color: #f4f4f9;
-  border: 1px solid #666;
+  background: #3a3a3a;
+  color: #e0e0e0;
+  border: 1px solid #555;
 }
 
 label {
@@ -225,65 +233,71 @@ label {
 #copyButton {
   padding: 10px 15px;
   border: none;
-  border-radius: 5px;
-  background: linear-gradient(to top right, #ffa500, #fbc054);
+  border-radius: 12px;
+  background: linear-gradient(to top right, #ff7e5f, #feb47b);
   color: white;
   cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
 }
 
 body.dark #copyButton {
-  background: linear-gradient(to top right, #cc8400, #d99a3a);
+  background: linear-gradient(to top right, #cc6e4e, #d99a3a);
 }
 
 #copyButton:hover {
-  background: linear-gradient(to top right, #ff8c00, #fba034);
+  background: linear-gradient(to top right, #ff6a3d, #fe9a6b);
+  transform: translateY(-2px);
 }
 
 body.dark #copyButton:hover {
-  background: linear-gradient(to top right, #b36b00, #c4882a);
+  background: linear-gradient(to top right, #b35a2d, #c4882a);
 }
 
 #downloadButton {
   padding: 10px 15px;
   border: none;
-  border-radius: 5px;
-  background: linear-gradient(to top right, #ffa500, #fbc054);
+  border-radius: 12px;
+  background: linear-gradient(to top right, #ff7e5f, #feb47b);
   color: white;
   cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
 }
 
 body.dark #downloadButton {
-  background: linear-gradient(to top right, #cc8400, #d99a3a);
+  background: linear-gradient(to top right, #cc6e4e, #d99a3a);
 }
 
 #downloadButton:hover {
-  background: linear-gradient(to top right, #ff8c00, #fba034);
+  background: linear-gradient(to top right, #ff6a3d, #fe9a6b);
+  transform: translateY(-2px);
 }
 
 body.dark #downloadButton:hover {
-  background: linear-gradient(to top right, #b36b00, #c4882a);
+  background: linear-gradient(to top right, #b35a2d, #c4882a);
 }
 
 #uploadButton {
   padding: 10px 15px;
   border: none;
-  border-radius: 5px;
-  background: linear-gradient(to top right, #ffa500, #fbc054);
+  border-radius: 12px;
+  background: linear-gradient(to top right, #ff7e5f, #feb47b);
   color: white;
   cursor: pointer;
   margin-left: 10px;
+  transition: background 0.3s, transform 0.3s;
 }
 
 body.dark #uploadButton {
-  background: linear-gradient(to top right, #cc8400, #d99a3a);
+  background: linear-gradient(to top right, #cc6e4e, #d99a3a);
 }
 
 #uploadButton:hover {
-  background: linear-gradient(to top right, #ff8c00, #fba034);
+  background: linear-gradient(to top right, #ff6a3d, #fe9a6b);
+  transform: translateY(-2px);
 }
 
 body.dark #uploadButton:hover {
-  background: linear-gradient(to top right, #b36b00, #c4882a);
+  background: linear-gradient(to top right, #b35a2d, #c4882a);
 }
 
 .input-label,
@@ -298,7 +312,7 @@ body.dark #uploadButton:hover {
 
 body.dark .input-label,
 body.dark .output-label {
-  color: #f4f4f9;
+  color: #e0e0e0;
 }
 
 .input-container {
@@ -319,30 +333,30 @@ body.dark .output-label {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f4f4f9;
+  background: #f0f2f5;
 }
 
 body.dark ::-webkit-scrollbar-track {
-  background: #333;
+  background: #1e1e1e;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ffa500;
+  background-color: #ff7e5f;
   border-radius: 10px;
-  border: 3px solid #f4f4f9;
+  border: 3px solid #f0f2f5;
 }
 
 body.dark ::-webkit-scrollbar-thumb {
-  background-color: #cc8400;
-  border: 3px solid #333;
+  background-color: #cc6e4e;
+  border: 3px solid #1e1e1e;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #ff8c00;
+  background-color: #ff6a3d;
 }
 
 body.dark ::-webkit-scrollbar-thumb:hover {
-  background-color: #b36b00;
+  background-color: #b35a2d;
 }
 
 .main-container {
@@ -359,16 +373,17 @@ body.dark ::-webkit-scrollbar-thumb:hover {
   width: 300px;
   padding: 20px;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 20px;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 body.dark .secondary-container {
-  background: #444;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: #2c2c2c;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .secondary-container h2 {
@@ -378,7 +393,7 @@ body.dark .secondary-container {
 }
 
 body.dark .secondary-container h2 {
-  color: #f4f4f9;
+  color: #e0e0e0;
 }
 
 .secondary-container .options {
@@ -399,22 +414,23 @@ body.dark .secondary-container h2 {
 }
 
 body.dark .option-group label {
-  color: #f4f4f9;
+  color: #e0e0e0;
 }
 
 .option-group select {
   padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 12px;
   background: #fff;
   color: #333;
   cursor: pointer;
+  transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 body.dark .option-group select {
-  background: #555;
-  color: #f4f4f9;
-  border: 1px solid #666;
+  background: #3a3a3a;
+  color: #e0e0e0;
+  border: 1px solid #555;
 }
 
 .section-title {
@@ -425,7 +441,7 @@ body.dark .option-group select {
 }
 
 body.dark .section-title {
-  color: #f4f4f9;
+  color: #e0e0e0;
 }
 
 .section {
