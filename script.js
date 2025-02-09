@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (e) {
       throw new Error(
         escapeHTML(
-          `Oops! Something went wrong. Please check your JSON and the selected specification and try again. Here are more details about this error: ${e.message}`
+          `Oops! Something went wrong. Please check your JSON and the selected specification and try again.`
         )
       );
     }
