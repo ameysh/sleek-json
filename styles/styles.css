@@ -494,3 +494,89 @@ hr {
   margin: 20px 0;
   border-top: 1px solid #5d5d5d;
 }
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    min-height: auto;
+  }
+
+  .container,
+  .secondary-container {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  textarea {
+    height: 120px;
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+  }
+
+  .button-group {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .input-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: calc(100% - 40px);
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .options {
+    gap: 20px;
+  }
+
+  .option-group select {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .buttons button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
