@@ -455,3 +455,8 @@ body.dark .section-title {
 .error {
   display: none;
 }
+
+.github-logo {
+  width: 24px;
+  height: 24px;
+}
