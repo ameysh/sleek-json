@@ -451,3 +451,7 @@ body.dark .section-title {
   display: flex;
   gap: 10px;
 }
+
+.error {
+  display: none;
+}

@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
   fileInput.type = "file";
   fileInput.accept = ".json";
 
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    document.body.classList.toggle("dark", savedTheme === "dark");
+    themeToggle.textContent = savedTheme === "dark" ? "Light" : "Dark";
+  }
+
   document
     .getElementById("exampleButton")
     .addEventListener("click", loadExampleJSON);
@@ -149,9 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function toggleTheme() {
     document.body.classList.toggle("dark");
-    themeToggle.textContent = document.body.classList.contains("dark")
-      ? "Dark"
-      : "Light";
+    const isDark = document.body.classList.contains("dark");
+    themeToggle.textContent = isDark ? "Light" : "Dark";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   }
 
   function escapeHTML(str) {
