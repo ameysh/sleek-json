@@ -134,8 +134,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleFileUpload(event) {
     const file = event.target.files[0];
     if (file) {
+      if (file.type !== "application/json") {
+        displayError("Please upload a valid JSON file.");
+        return;
+      }
       const reader = new FileReader();
-      reader.onload = (e) => (jsonInput.value = e.target.result);
+      reader.onload = (e) => {
+        jsonInput.value = e.target.result;
+        error.style.display = "none";
+      };
       reader.readAsText(file);
     }
   }
