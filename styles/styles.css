@@ -477,5 +477,9 @@ a {
 footer {
   text-align: center;
   margin-top: 20px;
+  color: #333;
+}
+
+body.dark footer {
   color: #e0e0e0;
 }
