@@ -14,7 +14,7 @@ Working with JSON data can often be cumbersome, especially when dealing with lar
 
 ## Installation
 
-Sleek JSON Formatter is a fully web-based tool. You can access it directly through your web browser using [this link](sleek-json.vercel.app). No installation is required.
+Sleek JSON Formatter is a fully web-based tool. You can access it directly through your web browser using the link. No installation is required.
 
 ## Usage
 
