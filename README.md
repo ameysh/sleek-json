@@ -1,3 +1,7 @@
+# About This Project
+
+I created this project as a simple example to help teach web development concepts to friends who are just starting their studies. If you're new to computer science, you're welcome to use it as a learning resource.
+
 # Sleek JSON Formatter
 
 Working with JSON data can often be cumbersome, especially when dealing with large and complex datasets. Sleek JSON Formatter helps developers and data analysts by providing a simple and efficient way to format and minify JSON data, making it easier to read and debug. It is a web-based tool that supports both standard JSON (RFC 8259) and JSON5 specifications.
