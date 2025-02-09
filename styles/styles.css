@@ -460,3 +460,12 @@ body.dark .section-title {
   width: 24px;
   height: 24px;
 }
+
+body.dark .github-logo {
+  content: url("/assets/github-mark-white.png");
+}
+
+#aboutText {
+  margin-top: auto;
+  margin-bottom: auto;
+}
