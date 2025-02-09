@@ -4,7 +4,6 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -464,4 +463,19 @@ body.dark .github-logo {
 #aboutText {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.left-align {
+  text-align: left;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #e0e0e0;
 }
