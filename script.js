@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme) {
     document.body.classList.toggle("dark", savedTheme === "dark");
-    themeToggle.textContent = savedTheme === "dark" ? "Light" : "Dark";
   }
+  themeToggle.textContent = "Change Theme";
 
   document
     .getElementById("exampleButton")
@@ -154,9 +154,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function toggleTheme() {
-    document.body.classList.toggle("dark");
-    const isDark = document.body.classList.contains("dark");
-    themeToggle.textContent = isDark ? "Light" : "Dark";
+    const isDark = !document.body.classList.contains("dark");
+    document.body.classList.toggle("dark", isDark);
     localStorage.setItem("theme", isDark ? "dark" : "light");
   }
 
